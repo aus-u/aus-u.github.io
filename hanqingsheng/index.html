@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韩庆生-知名专家学者与行业资深顾问</title>
+    <meta name="description" content="韩庆生官方网站，展示韩庆生在公共管理、公共政策及社会治理领域的学术成果、专业观点与社会服务贡献。">
+    <meta name="keywords" content="韩庆生, 公共管理, 社会治理, 专家顾问, 政策研究">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #c0392b;
+            --bg-light: #f8f9fa;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-padding {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            font-size: 1rem;
+        }
+
+        .btn-cta {
+            background-color: var(--primary-color);
+            color: #fff !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--secondary-color);
+            color: #fff !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: #fff;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.15);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+            text-align: justify;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background-color: #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Expertise Section */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Publications Section */
+        .publications-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .pub-item {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+
+        .pub-date {
+            min-width: 120px;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .pub-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pub-info p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            background-color: var(--bg-light);
+        }
+
+        .service-item {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .service-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-item p {
+            color: var(--text-gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            opacity: 0.7;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .pub-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">韩庆<span>生</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#about">关于</a></li>
+                    <li><a href="#expertise">研究领域</a></li>
+                    <li><a href="#publications">学术成果</a></li>
+                    <li><a href="#services">咨询服务</a></li>
+                    <li><a href="#contact" class="btn-cta">联系合作</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>韩庆生</h1>
+                <p>公共管理领域的深耕者，致力于社会治理现代化与政策科学研究的实践专家。</p>
+                <div class="hero-tags">
+                    <span class="tag">公共政策</span>
+                    <span class="tag">社会治理</span>
+                    <span class="tag">行政管理</span>
+                    <span class="tag">智库顾问</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>深耕专业领域，服务社会发展</h2>
+                        <p>韩庆生长期致力于公共管理、公共政策及社会治理领域的理论研究与实践探索。拥有丰富的政府咨询经验，参与过多项重大政策的前期调研与评估工作。其学术观点严谨务实，注重理论联系实际，在推动基层治理创新方面提出了具有建设性的解决方案。</p>
+                        <p>作为资深专家，韩庆生不仅关注宏观政策的制定，也深入一线调研，倾听社会声音，力求为复杂的社会问题提供科学、公正的决策参考。</p>
+                    </div>
+                    <div class="about-image">
+                        <!-- 使用 Picsum 随机种子图片作为占位符 -->
+                        <img src="https://picsum.photos/seed/hanqingsheng1/600/400" alt="韩庆生工作照">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Section -->
+        <section id="expertise" class="section-padding" style="background-color: var(--bg-light);">
+            <div class="container">
+                <h2 class="section-title">主要研究领域</h2>
+                <div class="expertise-grid">
+                    <article class="card">
+                        <div class="card-icon">🏛️</div>
+                        <h3>公共管理</h3>
+                        <p>研究政府职能转变、行政体制改革以及现代公共治理体系的构建，探讨如何提高行政效能与服务质量。</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">⚖️</div>
+                        <h3>政策科学</h3>
+                        <p>专注于公共政策分析、评估与制定，运用定量与定性相结合的方法，为政策优化提供数据支撑。</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">🤝</div>
+                        <h3>社会治理</h3>
+                        <p>探讨多元主体参与社会治理的机制，研究社区建设、基层自治以及社会矛盾化解策略。</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">📊</div>
+                        <h3>组织行为</h3>
+                        <p>分析组织文化、领导力发展及人力资源管理的有效模式，提升团队协作与组织执行力。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">学术成果与观点</h2>
+                <div class="publications-list">
+                    <article class="pub-item">
+                        <div class="pub-date">2023年10月</div>
+                        <div class="pub-info">
+                            <h4>《新时代基层治理创新路径探析》</h4>
+                            <p>发表于《公共管理学报》，深入探讨了数字化背景下基层治理模式的转型与挑战。</p>
+                        </div>
+                    </article>
+                    <article class="pub-item">
+                        <div class="pub-date">2023年05月</div>
+                        <div class="pub-info">
+                            <h4>《优化营商环境：政策工具的选择与组合》</h4>
+                            <p>收录于《政策研究参考》专刊，分析了不同政策工具在改善营商环境中的适用性。</p>
+                        </div>
+                    </article>
+                    <article class="pub-item">
+                        <div class="pub-date">2022年12月</div>
+                        <div class="pub-info">
+                            <h4>《政府绩效评估体系的重构与实践》</h4>
+                            <p>在公共管理论坛发表主旨演讲，提出基于结果导向的绩效评估新框架。</p>
+                        </div>
+                    </article>
+                    <article class="pub-item">
+                        <div class="pub-date">2022年08月</div>
+                        <div class="pub-info">
+                            <h4>《跨部门协同治理的机制研究》</h4>
+                            <p>发表于《行政管理改革》，探讨了打破部门壁垒、实现信息共享的路径。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section-padding services-section">
+            <div class="container">
+                <h2 class="section-title">专业服务</h2>
+                <div class="expertise-grid">
+                    <div class="service-item">
+                        <h4>政策咨询与评估</h4>
+                        <p>为政府部门及企事业单位提供政策制定、效果评估及方案优化的专业咨询。</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>课题研究与调研</h4>
+                        <p>承接各类社会科学研究课题，进行深入的实地调研与数据分析，出具权威报告。</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>培训与讲座</h4>
+                        <p>针对公务员及企业管理人员进行公共管理理论与实务的专题培训与讲座。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding">
+            <div class="container" style="text-align: center; max-width: 600px;">
+                <h2 class="section-title">联系与合作</h2>
+                <p style="margin-bottom: 2rem; color: var(--text-gray);">
+                    如需学术交流、项目合作或专业咨询，请通过以下方式联系。
+                </p>
+                <a href="mailto:contact@example.com" class="btn-cta" style="padding: 1rem 2.5rem; font-size: 1.1rem;">发送邮件联系</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2023 韩庆生个人工作室 版权所有</p>
+                <div class="footer-links">
+                    <a href="#">隐私政策</a>
+                    <a href="#">使用条款</a>
+                    <a href="#">RSS订阅</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
