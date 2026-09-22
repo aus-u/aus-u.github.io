@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界boss-大型多人在线游戏终极挑战与攻略指南</title>
+    <meta name="description" content="本站提供世界boss的详细攻略、刷新时间查询、战斗机制解析及团队配置建议。帮助玩家高效击杀世界boss，获取稀有装备与游戏资源。">
+    <meta name="keywords" content="世界boss, 玩家世界boss, 跨服世界boss, 攻略, 刷新时间, 装备掉落">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2f3542;
+            --accent-color: #ffa502;
+            --bg-dark: #1e272e;
+            --bg-card: #2f3640;
+            --text-light: #f1f2f6;
+            --text-gray: #a4b0be;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(30, 39, 46, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-light);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .cta-button:hover {
+            background-color: #ff6b81;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/dungeon/1920/1080') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #dfe4ea;
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px var(--spacing-unit);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--bg-card);
+            padding-bottom: 15px;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--text-light);
+        }
+
+        .section-title span {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* Boss Grid */
+        .boss-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .boss-card {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .boss-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .boss-image {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .boss-info {
+            padding: 20px;
+        }
+
+        .boss-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .boss-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .boss-rank {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .boss-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+        }
+
+        .boss-meta i {
+            margin-right: 4px;
+        }
+
+        .boss-desc {
+            font-size: 0.9rem;
+            color: #dcdde1;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .boss-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-outline {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid var(--text-gray);
+            border-radius: 4px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Strategy Section */
+        .strategy-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .strategy-content {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+        }
+
+        .guide-item {
+            margin-bottom: 30px;
+        }
+
+        .guide-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .guide-item p {
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        .guide-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #ced6e0;
+        }
+
+        .guide-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .sidebar {
+            background-color: var(--bg-card);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 8px;
+        }
+
+        .sidebar-list a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+
+        .sidebar-list a:hover {
+            color: var(--primary-color);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-card);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-bottom: 60px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 20px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            color: var(--text-gray);
+            display: none;
+            padding-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: "-";
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b0e11;
+            padding: 50px 0 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #57606f;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .strategy-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                <span>WorldBoss</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">BOSS图鉴</a></li>
+                    <li><a href="#">副本攻略</a></li>
+                    <li><a href="#">团队配置</a></li>
+                    <li><a href="#">最新动态</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-button">加入公会</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>挑战世界BOSS，赢取稀有战利品</h1>
+                <p>集结全服勇士，直面史诗级强敌。掌握精准的刷新时间与战斗机制，成为击败世界BOSS的传奇指挥官。</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>12</h3>
+                        <p>活跃世界BOSS</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24h</h3>
+                        <p>全天候刷新</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>95%</h3>
+                        <p>稀有掉落率</p>
+                    </div>
+                </div>
+                <a href="#boss-list" class="cta-button" style="padding: 12px 30px; font-size: 1rem;">查看BOSS列表</a>
+            </div>
+        </section>
+
+        <div class="container" id="boss-list">
+            <div class="section-title">
+                <h2>热门世界BOSS</h2>
+                <span>点击查看详细攻略与掉落信息</span>
+            </div>
+
+            <div class="boss-grid">
+                <!-- Boss Card 1 -->
+                <article class="boss-card">
+                    <img src="https://picsum.photos/seed/demon/400/250" alt="深渊领主" class="boss-image">
+                    <div class="boss-info">
+                        <div class="boss-header">
+                            <h3 class="boss-name">深渊领主</h3>
+                            <span class="boss-rank">S级</span>
+                        </div>
+                        <div class="boss-meta">
+                            <span>⏰ 刷新: 20:00</span>
+                            <span>📍 地点: 暗影裂隙</span>
+                        </div>
+                        <p class="boss-desc">盘踞在暗影裂隙的远古恶魔，拥有毁灭性的暗影吐息。建议高防御坦克与强力爆发输出配合，注意躲避全屏AOE技能。</p>
+                        <div class="boss-actions">
+                            <button class="btn-outline" onclick="showDetails('深渊领主')">战斗机制</button>
+                            <button class="btn-outline" onclick="showDetails('深渊领主')">掉落预览</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Boss Card 2 -->
+                <article class="boss-card">
+                    <img src="https://picsum.photos/seed/wolf/400/250" alt="冰霜巨龙" class="boss-image">
+                    <div class="boss-info">
+                        <div class="boss-header">
+                            <h3 class="boss-name">冰霜巨龙</h3>
+                            <span class="boss-rank" style="background-color: #5352ed;">A级</span>
+                        </div>
+                        <div class="boss-meta">
+                            <span>⏰ 刷新: 21:30</span>
+                            <span>📍 地点: 雪原之巅</span>
+                        </div>
+                        <p class="boss-desc">栖息在极寒之地的巨兽，攻击附带冰冻效果。治疗职业需时刻准备驱散，物理防御较低的远程职业需保持移动。</p>
+                        <div class="boss-actions">
+                            <button class="btn-outline" onclick="showDetails('冰霜巨龙')">战斗机制</button>
+                            <button class="btn-outline" onclick="showDetails('冰霜巨龙')">掉落预览</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Boss Card 3 -->
+                <article class="boss-card">
+                    <img src="https://picsum.photos/seed/ghost/400/250" alt="虚空行者" class="boss-image">
+                    <div class="boss-info">
+                        <div class="boss-header">
+                            <h3 class="boss-name">虚空行者</h3>
+                            <span class="boss-rank" style="background-color: #ff6b81;">B级</span>
+                        </div>
+                        <div class="boss-meta">
+                            <span>⏰ 刷新: 22:00</span>
+                            <span>📍 地点: 虚空裂缝</span>
+                        </div>
+                        <p class="boss-desc">穿梭于维度的神秘存在，会随机传送玩家。需要指挥官实时调整站位，打断其施法是获胜的关键。</p>
+                        <div class="boss-actions">
+                            <button class="btn-outline" onclick="showDetails('虚空行者')">战斗机制</button>
+                            <button class="btn-outline" onclick="showDetails('虚空行者')">掉落预览</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="section-title">
+                <h2>新手指南与策略</h2>
+                <span>从入门到精通的完整战斗手册</span>
+            </div>
+
+            <div class="strategy-layout">
+                <div class="strategy-content">
+                    <div class="guide-item">
+                        <h3>1. 组队配置建议</h3>
+                        <p>击杀世界BOSS需要合理的职业搭配。通常建议配置至少2名主坦克（MT）和2名辅助治疗，其余为爆发输出职业。坦克负责拉住仇恨，治疗保证队伍生存，输出职业在安全的前提下最大化DPS。</p>
+                        <ul class="guide-list">
+                            <li><strong>坦克：</strong> 需要高防御和减伤技能，优先承受BOSS的正面伤害。</li>
+                            <li><strong>治疗：</strong> 需要掌握群体治疗与单体急救技能，注意BOSS的控制技能。</li>
+                            <li><strong>输出：</strong> 远程职业应保持距离，近战职业注意走位躲避AOE。</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-item">
+                        <h3>2. 战斗核心机制</h3>
+                        <p>世界BOSS通常拥有阶段转换机制。当BOSS血量降至70%和30%时，会进入狂暴状态或召唤小怪。此时必须优先清理小怪或开启爆发技能，切勿在狂暴阶段硬抗伤害。</p>
+                    </div>
+
+                    <div class="guide-item">
+                        <h3>3. 奖励获取规则</h3>
+                        <p>击杀BOSS后，根据队伍造成的伤害（DPS）和职业分工发放奖励。高伤害玩家有更高概率获得极品装备，治疗职业和辅助职业也有专属的荣誉点数奖励。</p>
+                    </div>
+                </div>
+
+                <aside class="sidebar">
+                    <h3>快速导航</h3>
+                    <ul class="sidebar-list">
+                        <li><a href="#">深渊领主掉落表 <span>→</span></a></li>
+                        <li><a href="#">全服排行榜 <span>→</span></a></li>
+                        <li><a href="#">常见BOSS站位图 <span>→</span></a></li>
+                        <li><a href="#">装备强化指南 <span>→</span></a></li>
+                        <li><a href="#">公会战报 <span>→</span></a></li>
+                        <li><a href="#">周末双倍活动 <span>→</span></a></li>
+                    </ul>
+                </aside>
+            </div>
+
+            <div class="faq-section">
+                <div class="section-title" style="border:none; padding-bottom:0; margin-bottom:20px;">
+                    <h2>常见问题 (FAQ)</h2>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">世界BOSS的刷新时间是固定的吗？</div>
+                    <div class="faq-answer">是的，绝大多数世界BOSS遵循每日固定时间刷新，但也可能会有极少数BOSS在特殊节日或活动期间调整刷新时间，请关注游戏内公告。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">如果错过了BOSS刷新怎么办？</div>
+                    <div class="faq-answer">世界BOSS一旦死亡无法复活，错过的玩家无法参与战斗。建议提前在游戏日历中设置提醒，并提前前往BOSS刷新点。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">一个人可以挑战世界BOSS吗？</div>
+                    <div class="faq-answer">不建议单人挑战。世界BOSS拥有极高的攻击力和范围技能，单人挑战几乎必死，且无法获得任何击杀奖励。</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 15px;">
+                    <span>WorldBoss</span>
+                </div>
+                <p style="color: var(--text-gray); font-size: 0.9rem;">
+                    专注于提供最全面的世界BOSS攻略与战斗资讯，帮助玩家在激烈的跨服战斗中脱颖而出。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>攻略指南</h4>
+                <ul>
+                    <li><a href="#">BOSS技能解析</a></li>
+                    <li><a href="#">职业搭配推荐</a></li>
+                    <li><a href="#">装备获取途径</a></li>
+                    <li><a href="#">副本通关技巧</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>社区互动</h4>
+                <ul>
+                    <li><a href="#">玩家论坛</a></li>
+                    <li><a href="#">公会列表</a></li>
+                    <li><a href="#">提交Bug</a></li>
+                    <li><a href="#">联系管理员</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">官方微博</a></li>
+                    <li><a href="#">Discord社区</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 WorldBoss Guide. All rights reserved. 本站内容仅供游戏参考，与游戏官方无关。</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Simple Interaction for Boss Buttons
+        function showDetails(bossName) {
+            // In a real app, this would navigate to a detail page.
+            // For this static showcase, we use a simple alert or console log.
+            console.log('Navigating to details for: ' + bossName);
+            alert('正在加载 ' + bossName + ' 的详细攻略...');
+        }
+    </script>
+</body>
+  </html>
