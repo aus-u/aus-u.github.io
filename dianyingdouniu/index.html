@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="电影斗牛 - 经典中国电影《斗牛》在线观看与深度解析。包含剧情简介、角色分析、幕后花絮及观影指南。">
+    <meta name="keywords" content="电影斗牛, 电影斗牛在线观看, 宁浩斗牛, 黄渤斗牛, 电影解析">
+    <title>电影斗牛-经典剧情解析与观影指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #c0392b;
+            --secondary-color: #2c3e50;
+            --accent-color: #f39c12;
+            --bg-color: #f4f6f7;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #7f8c8d;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 0.5rem auto 0;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/bullfight/1920/1080.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #a93226;
+            transform: translateY(-2px);
+        }
+
+        /* Movie Info Grid */
+        .movie-info-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            margin-top: -3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .poster-card {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .poster-card img {
+            width: 100%;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .movie-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .meta-item strong {
+            color: var(--secondary-color);
+        }
+
+        .synopsis h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .synopsis p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* Cast Section */
+        .cast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cast-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .cast-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cast-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .cast-info {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .cast-name {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .cast-role {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Reviews/Analysis */
+        .analysis-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .analysis-item {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .analysis-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            background-color: #fff;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: #f9f9f9;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #eee;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1.2rem;
+            color: var(--accent-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .movie-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none; /* Simplified for this showcase */
+            }
+
+            .poster-card {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>🎬</span> 电影斗牛
+            </div>
+            <nav class="nav-links">
+                <a href="#intro">剧情简介</a>
+                <a href="#cast">演员表</a>
+                <a href="#analysis">深度解析</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>电影斗牛</h1>
+                <p>一部关于人性、生存与荒诞的黑色幽默经典之作。跟随宁浩的镜头，走进那段战火纷飞中的特殊岁月。</p>
+                <a href="#intro" class="btn btn-primary">开始阅读</a>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section id="intro" class="section">
+            <div class="container">
+                <h2 class="section-title">影片概览</h2>
+                <div class="movie-info-grid">
+                    <div class="poster-card">
+                        <img src="https://picsum.photos/seed/bullmovie/300/450" alt="电影斗牛海报">
+                        <div class="movie-meta">
+                            <div class="meta-item"><strong>导演:</strong> 宁浩</div>
+                            <div class="meta-item"><strong>主演:</strong> 黄渤, 徐峥, 王砚辉</div>
+                            <div class="meta-item"><strong>类型:</strong> 剧情 / 喜剧</div>
+                            <div class="meta-item"><strong>年份:</strong> 2009</div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #666;">点击图片查看更多细节</p>
+                    </div>
+                    <div class="synopsis">
+                        <h3>剧情简介</h3>
+                        <p>故事背景设定在抗日战争时期的山东。八路军女护士九儿（由黄渤饰演）奉命护送一头名叫“阿花”的公牛前往根据地。然而，在护送途中，队伍遭遇袭击，九儿不幸牺牲。为了完成九儿的遗愿，黄渤饰演的角色——一名看似不靠谱却重情重义的牛二，决定独自一人承担起照顾阿花的责任。他不仅要面对日军的搜捕，还要在极度恶劣的自然环境中与这头倔强的公牛周旋，展开了一场跨越物种的“生死相依”。</p>
+                        <h3>作品风格</h3>
+                        <p>影片延续了宁浩一贯的黑色幽默风格，在战火硝烟的背景下，通过荒诞的情节和夸张的表演，展现了小人物在绝境中的生存智慧与人性光辉。影片没有宏大的战争场面，而是聚焦于微观视角，通过人与牛的互动，折射出战争对生命的残酷和对人性的考验。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cast Section -->
+        <section id="cast" class="section" style="background-color: #fff;">
+            <div class="container">
+                <h2 class="section-title">主要演员</h2>
+                <div class="cast-grid">
+                    <div class="cast-card">
+                        <img src="https://picsum.photos/seed/huangbo/200/300" alt="黄渤" class="cast-img">
+                        <div class="cast-info">
+                            <span class="cast-name">黄渤</span>
+                            <span class="cast-role">饰 牛二</span>
+                        </div>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://picsum.photos/seed/xuzheng/200/300" alt="徐峥" class="cast-img">
+                        <div class="cast-info">
+                            <span class="cast-name">徐峥</span>
+                            <span class="cast-role">饰 阿花（公牛）</span>
+                        </div>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://picsum.photos/seed/wangyanhui/200/300" alt="王砚辉" class="cast-img">
+                        <div class="cast-info">
+                            <span class="cast-name">王砚辉</span>
+                            <span class="cast-role">饰 眼镜</span>
+                        </div>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://picsum.photos/seed/liu/200/300" alt="王迅" class="cast-img">
+                        <div class="cast-info">
+                            <span class="cast-name">王迅</span>
+                            <span class="cast-role">饰 驴二</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis Section -->
+        <section id="analysis" class="section">
+            <div class="container">
+                <h2 class="section-title">深度解析</h2>
+                <div class="analysis-list">
+                    <article class="analysis-item">
+                        <h3>独特的视角：人与牛的对话</h3>
+                        <p>在《斗牛》中，人与牛的关系超越了简单的饲养与被饲养。牛不再是单纯的道具，而是影片中“活”的角色。影片花费了大量笔墨描写牛的习性、情绪以及它与主角之间的默契与冲突。这种跨物种的视角，使得影片在战争题材中独树一帜，为沉重的主题增添了一抹荒诞而温暖的色彩。</p>
+                    </article>
+                    <article class="analysis-item">
+                        <h3>小人物的英雄主义</h3>
+                        <p>牛二并非传统意义上的英雄，他贪财、怕死、有些市井无赖气。但正是这样真实的“小人物”，在面对巨大的灾难和责任时，展现出了惊人的韧性和担当。影片通过牛二的故事，探讨了什么是真正的英雄主义——不是生来无畏，而是明明恐惧，却依然选择前行。</p>
+                    </article>
+                    <article class="analysis-item">
+                        <h3>宁浩的叙事节奏</h3>
+                        <p>宁浩在《斗牛》中展现了对节奏的精准把控。影片前半段节奏明快，充满喜剧元素，让观众在笑声中逐渐代入；后半段节奏骤降，转为深沉的悲怆，这种强烈的反差带来了巨大的情感冲击力。结尾处的留白处理得非常巧妙，留给观众无尽的回味。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section" style="background-color: #fff;">
+            <div class="container">
+                <h2 class="section-title">常见问题</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">电影《斗牛》的原著是什么？</div>
+                        <div class="faq-answer">《斗牛》是宁浩执导的原创剧本，并非改编自某部具体文学作品。剧本灵感来源于抗日战争时期的一则真实新闻，讲述了一头牛在战争中幸存的故事。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">为什么叫《斗牛》而不是《护牛》？</div>
+                        <div class="faq-answer">片名《斗牛》既包含了影片的核心冲突——主角与牛的磨合与对抗，也隐喻了主角在战争环境下的生存斗争。此外，牛二与牛的互动充满了“斗”的趣味性，符合影片的喜剧基调。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">这部电影适合带孩子看吗？</div>
+                        <div class="faq-answer">虽然影片包含喜剧元素，但整体基调偏向现实主义和黑色幽默，部分情节较为残酷，建议家长根据孩子的心理承受能力决定是否观看。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                        本站致力于为影迷提供高质量的电影资讯、深度解析与观影指南。我们专注于挖掘经典与优秀作品的内涵。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#intro">剧情简介</a></li>
+                        <li><a href="#cast">演员表</a></li>
+                        <li><a href="#analysis">影评解析</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关推荐</h4>
+                    <ul>
+                        <li><a href="#">疯狂的石头</a></li>
+                        <li><a href="#">黄金大劫案</a></li>
+                        <li><a href="#">无人区</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 电影斗牛专题站. All Rights Reserved. 本页面仅供展示与学习使用。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
