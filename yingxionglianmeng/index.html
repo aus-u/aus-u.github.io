@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="英雄联盟扎克攻略中心。提供扎克出装推荐、符文天赋、连招技巧、对线思路及团战打法，助你轻松上分。">
+    <meta name="keywords" content="英雄联盟扎克, 扎克攻略, 扎克出装, 扎克符文, 扎克玩法">
+    <title>英雄联盟扎克-高机动性上单攻略与出装指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4caf50;
+            --primary-dark: #2e7d32;
+            --accent-color: #8bc34a;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-color: #333;
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/zachhero/1600/900') no-repeat center center/cover;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ddd;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Build Section */
+        .build-section {
+            background-color: var(--bg-color);
+        }
+
+        .build-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .build-card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 25px;
+            border: 1px solid var(--border-color);
+        }
+
+        .build-card h3 {
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+            font-size: 1.3rem;
+        }
+
+        .item-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(255,255,255,0.03);
+            border-radius: 4px;
+        }
+
+        .item-name {
+            font-weight: 500;
+        }
+
+        .item-tag {
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background-color: #333;
+            color: var(--text-muted);
+        }
+
+        /* Gameplay Section */
+        .gameplay-section {
+            background-color: var(--card-bg);
+        }
+
+        .gameplay-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .guide-article {
+            margin-bottom: 30px;
+        }
+
+        .guide-article h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .guide-article p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .guide-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: var(--text-muted);
+        }
+
+        .guide-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .sidebar-box {
+            background-color: var(--bg-color);
+            padding: 20px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .skill-tree {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .skill-point {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            background-color: #2a2a2a;
+            border-radius: 4px;
+        }
+
+        .skill-point.active {
+            background-color: rgba(76, 175, 80, 0.2);
+            border-left: 3px solid var(--primary-color);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-color);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .faq-answer {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                margin-top: 15px;
+            }
+
+            .nav-wrapper nav.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .build-grid, .gameplay-content {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 22h20L12 2zm0 3.5L18.5 20H5.5L12 5.5z"/>
+                </svg>
+                <span>LoL 扎克攻略</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="#builds">出装推荐</a></li>
+                    <li><a href="#skills">符文技能</a></li>
+                    <li><a href="#guide">对线思路</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>英雄联盟扎克</h1>
+                <p>作为上单的中流砥柱，扎克以其独特的弹性机制和强大的控制能力著称。掌握核心连招与出装节奏，成为对手的噩梦。</p>
+                <div>
+                    <a href="#builds" class="btn btn-primary">查看出装</a>
+                    <a href="#guide" class="btn btn-outline">阅读攻略</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>高机动</h3>
+                        <p>超远位移</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>强控制</h3>
+                        <p>群体击飞</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>高坦度</h3>
+                        <p>强力反打</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>灵活</h3>
+                        <p>可打野/上单</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Build Section -->
+        <section id="builds" class="section build-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">出装与符文推荐</h2>
+                    <p class="section-desc">根据对局阵容灵活调整，推荐主流的征服者与余震流打法。</p>
+                </div>
+
+                <div class="build-grid">
+                    <!-- Core Build -->
+                    <div class="build-card">
+                        <h3>核心出装</h3>
+                        <div class="item-list">
+                            <div class="item-row">
+                                <span class="item-name">神话：星蚀</span>
+                                <span class="item-tag">首选</span>
+                            </div>
+                            <div class="item-row">
+                                <span class="item-name">三相之力</span>
+                                <span class="item-tag">后期</span>
+                            </div>
+                            <div class="item-row">
+                                <span class="item-name">斯特拉克的挑战护手</span>
+                                <span class="item-tag">保命</span>
+                            </div>
+                            <div class="item-row">
+                                <span class="item-name">振奋盔甲</span>
+                                <span class="item-tag">续航</span>
+                            </div>
+                            <div class="item-row">
+                                <span class="item-name">死亡之舞</span>
+                                <span class="item-tag">减伤</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rune Setup -->
+                    <div class="build-card">
+                        <h3>符文搭配</h3>
+                        <div class="item-list">
+                            <div class="item-row">
+                                <span class="item-name">主系：征服者</span>
+                                <span class="item-tag">持续输出</span>
+                            </div>
+                            <div class="item-row">
+                                <span class="item-name">副系：坚决</span>
+                                <span class="item-tag">容错率</span>
+                            </div>
+                            <div class="item-row">
+                                <span class="item-name">属性碎片：自适应之力+自适应之力+生命值</span>
+                            </div>
+                            <div class="item-row">
+                                <span class="item-name">副系点满：骸骨镀层+复苏之风</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gameplay Section -->
+        <section id="guide" class="section gameplay-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">对线与团战技巧</h2>
+                </div>
+
+                <div class="gameplay-content">
+                    <article class="guide-article">
+                        <h3>对线期：以退为进</h3>
+                        <p>扎克在一级时战斗力较弱，应避免与敌方上单硬拼。利用E技能（大跳）快速清理兵线并到达安全位置，同时避免被消耗。当拥有Q技能（酸液喷射）时，可以尝试在兵线数量适中时进行消耗，但要注意留好E技能保命。</p>
+                        
+                        <h3>连招技巧</h3>
+                        <ul class="guide-list">
+                            <li><strong>单杀连招：</strong> Q - E - A - W - A - R - A - E（回收）。</li>
+                            <li><strong>追击连招：</strong> E - Q - W - A - A - R。</li>
+                            <li><strong>反打连招：</strong> 被控制时先交W（大块垃圾），利用R（生化弹球）的击飞打断对方关键技能或拉开距离。</li>
+                        </ul>
+
+                        <h3>团战思路</h3>
+                        <p>扎克是典型的开团型英雄。不要在团战开始时第一时间进场，应利用E技能绕后或从侧面切入。寻找敌方C位走位失误的机会，使用R技能精准击飞多人，随后配合队友打出爆发伤害。如果己方有强开英雄，可以充当前排吸收伤害并保护后排。</p>
+                    </article>
+
+                    <aside>
+                        <div class="sidebar-box">
+                            <h4 class="sidebar-title">技能加点顺序</h4>
+                            <div class="skill-tree">
+                                <div class="skill-point active">
+                                    <span>Q (酸液喷射)</span>
+                                    <span>优先级 1</span>
+                                </div>
+                                <div class="skill-point active">
+                                    <span>W (大块垃圾)</span>
+                                    <span>优先级 1</span>
+                                </div>
+                                <div class="skill-point active">
+                                    <span>E (嗜脑虫震击)</span>
+                                    <span>优先级 1</span>
+                                </div>
+                                <div class="skill-point">
+                                    <span>R (生化弹球)</span>
+                                    <span>优先级 2</span>
+                                </div>
+                            </div>
+                            <div style="margin-top: 20px; font-size: 0.9rem; color: #888;">
+                                <p>核心机制说明：扎克的大招可以弹射，且在生命值低于一定比例时会分裂。利用这一点可以打出双倍控制或利用地形进行回弹。</p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题解答</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">扎克适合新手使用吗？</div>
+                        <div class="faq-answer">扎克的手短且前期较弱，操作上限较高，对走位和技能释放时机要求较高，建议有一定游戏基础后再尝试。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">扎克打野怎么玩？</div>
+                        <div class="faq-answer">打野扎克推荐符文选择征服者，出装偏向半肉。重点在于利用Gank时的控制能力，以及利用野怪作为跳板进行位移。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">扎克被针对了怎么办？</div>
+                        <div class="faq-answer">前期尽量避免对拼，利用E技能躲避关键技能。中后期团战尽量等待敌方关键技能交完后再进场，或者寻找绕后机会。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">
+                <span>LoL 扎克攻略</span>
+            </div>
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">联系投稿</a>
+                <a href="#">免责声明</a>
+            </div>
+            <p class="copyright">
+                本网站内容仅供学习交流，所有游戏素材版权归 Riot Games 所有。<br>
+                © 2023 League of Legends Guide. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的移动端菜单切换逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav');
+
+            menuBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+
+            // 点击链接后自动收起菜单
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
